@@ -121,7 +121,7 @@ void writePlayerScoresToFile(const std::string& filename, const std::map<std::st
 
 int main() {
     // Load cities from file
-    std::vector<std::string> cities = loadCitiesFromFile("citiesen.txt");
+    std::vector<std::string> cities = loadCitiesFromFile("files/citiesen.txt");
 
     // Initialize server socket
     int serverSocket = socket(AF_INET, SOCK_DGRAM, 0);
@@ -159,7 +159,7 @@ int main() {
     std::map<std::string, int> playerScores; // Карта для отслеживания количества правильно отвеченных городов каждым игроком
 
     std::string prevousResults;
-    playerScores = sortMap(getDataFromFile("scores.txt"));
+    playerScores = sortMap(getDataFromFile("files/scores.txt"));
 
     // Receive data from clients
     for (int i = 0; i < 2; ++i) {
@@ -289,7 +289,7 @@ int main() {
     }
 
     // Запись результатов в файл
-    writePlayerScoresToFile("scores.txt", playerScores);
+    writePlayerScoresToFile("files/scores.txt", playerScores);
 
     // Close socket
     close(serverSocket);
