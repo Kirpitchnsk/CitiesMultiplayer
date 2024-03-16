@@ -1,0 +1,5 @@
+res 3
+olaf 7
+lol 10
+tony 10
+yell 0
